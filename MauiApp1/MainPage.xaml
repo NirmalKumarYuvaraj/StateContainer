@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:layouts="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:custom="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.MainPage">
+
+    <ContentPage.BindingContext>
+        <custom:ViewModel1 x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+
+    <Grid RowDefinitions="*" VerticalOptions="FillAndExpand"
+            layouts:StateContainer.CurrentState="{Binding CurrentState}">
+        <layouts:StateContainer.StateViews Grid.Row="1" >
+            <StackLayout layouts:StateView.StateKey="Loaded">                
+                <custom:CustomBoxView  />
+            </StackLayout>
+        </layouts:StateContainer.StateViews>
+    </Grid>
+
+
+</ContentPage>
